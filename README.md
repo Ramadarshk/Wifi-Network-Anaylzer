@@ -2,7 +2,6 @@ Here’s a **professional `README.md`** file for your project **"WiFi Network An
 
 ---
 
-````markdown
 # 📡 WiFi Network Analyzer
 
 A powerful Python-based tool for scanning, monitoring, and detecting vulnerabilities in Wi-Fi networks. It can identify rogue access points, MAC spoofing, and deauthentication attacks in real-time, helping users secure their wireless environment.
@@ -36,8 +35,6 @@ A powerful Python-based tool for scanning, monitoring, and detecting vulnerabili
    ```bash
    git clone https://github.com/yourusername/wifi-network-analyzer.git
    cd wifi-network-analyzer
-````
-
 2. Install dependencies:
 
    ```bash
