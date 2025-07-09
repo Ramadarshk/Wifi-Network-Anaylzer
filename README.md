@@ -1,128 +1,98 @@
-Here’s a **professional `README.md`** file for your project **"WiFi Network Analyzer"**:
+Based on your Python script for a **WiFi Network Analyzer**, here is a complete and professional `README.md` you can use on GitHub:
 
 ---
 
-# 📡 WiFi Network Analyzer
+# 📶 WiFi Network Analyzer
 
-A powerful Python-based tool for scanning, monitoring, and detecting vulnerabilities in Wi-Fi networks. It can identify rogue access points, MAC spoofing, and deauthentication attacks in real-time, helping users secure their wireless environment.
-
----
-
-## 🛠 Features
-
-- 🔍 **Wi-Fi Scanner**: Lists nearby networks with SSID, BSSID, signal strength, and security status.
-- 🚨 **Rogue AP Detection**: Identifies unauthorized access points spoofing legitimate SSIDs.
-- 🎭 **MAC Spoofing Detection**: Detects devices with duplicate MAC addresses using different IPs.
-- ⚡ **Deauthentication Attack Detection**: Real-time monitoring for deauth packets using Scapy.
-- 💾 **CSV Logging**: Saves all scan and detection results for future analysis.
+A powerful Python-based tool for scanning WiFi networks, detecting rogue access points, identifying MAC spoofing, and monitoring for deauthentication (deauth) attacks in real-time. Includes Telegram alert integration for live security notifications.
 
 ---
 
-## 🧰 Tech Stack
+## 🔍 Features
+
+- ✅ **WiFi Network Scanning**  
+  Detects nearby wireless networks, their signal strength, security type, and BSSID.
+
+- 🚨 **Rogue Access Point Detection**  
+  Compares scanned networks against a list of known trusted BSSIDs to identify potential rogue APs.
+
+- ⚠️ **MAC Address Spoofing Detection**  
+  Monitors for devices using the same MAC address from different IPs on the same network.
+
+- 📡 **Real-Time Deauthentication Attack Detection**  
+  Listens to WiFi traffic for deauth frames and logs suspicious behavior.
+
+- 🔔 **Telegram Alert Integration**  
+  Get instant notifications for rogue APs, MAC spoofing, and deauth attacks directly on Telegram.
+
+---
+
+## 🛠 Tech Stack
 
 - Python 3
-- [PyWiFi](https://github.com/awkman/pywifi)
-- [Scapy](https://scapy.net/)
-- Built-in libraries: `csv`, `os`, `logging`, `smtplib`, `time`
+- [pywifi](https://pypi.org/project/pywifi/)
+- [scapy](https://scapy.net/)
+- [dotenv](https://pypi.org/project/python-dotenv/)
+- [requests](https://pypi.org/project/requests/)
+- Logging & CSV for result persistence
 
 ---
 
-## 📦 Installation
+## 🧪 Requirements
 
-> **Note**: Some features require root/administrator privileges and a compatible wireless adapter in monitor mode.
+- Linux/Windows (with compatible wireless adapter)
+- Python 3.6+
+- Monitor mode support for deauth detection
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/wifi-network-analyzer.git
-   cd wifi-network-analyzer
-2. Install dependencies:
+---
 
-   ```bash
-   pip install pywifi scapy
-   ```
+## ⚙️ Installation
 
-3. Run the script:
+```bash
+git clone https://github.com/your-username/wifi-network-analyzer.git
+cd wifi-network-analyzer
+pip install -r requirements.txt
+````
 
-   ```bash
-   sudo python3 analyzer.py
-   ```
+Create a `.env` file for Telegram alerts:
+
+```
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
 
 ---
 
 ## 🚀 Usage
 
-The script will:
-
-* Scan nearby Wi-Fi networks
-* Detect rogue access points based on preconfigured trusted networks
-* Scan the local network for IP-MAC mapping
-* Detect MAC spoofing
-* Start real-time monitoring for deauthentication attacks
-
-All results will be saved as CSV files:
-
-* `wifi_scan_results.csv`
-* `rogue_aps.csv`
-* `mac_spoofing.csv`
-* `deauth_attacks.csv`
-
----
-
-## 🛡 Trusted Network Configuration
-
-Update the known network dictionary in the `detect_rogue_ap()` function:
-
-```python
-known_networks = {
-    "YourSSID": "00:11:22:33:44:55"
-}
+```bash
+python wifi_analyzer.py
 ```
 
----
+The script will:
 
-## 📁 Output Files
-
-| File                    | Description                           |
-| ----------------------- | ------------------------------------- |
-| `wifi_scan_results.csv` | Scan results of nearby Wi-Fi networks |
-| `rogue_aps.csv`         | Detected rogue access points          |
-| `mac_spoofing.csv`      | Detected MAC spoofing attempts        |
-| `deauth_attacks.csv`    | Real-time deauth attack logs          |
+* Scan WiFi networks
+* Detect rogue APs and MAC spoofing
+* Save results to CSV files
+* Start monitoring for deauth attacks
 
 ---
 
-## 📸 Screenshot (optional)
+## 🗂 Output Files
 
-*Add a screenshot or terminal output here.*
+| File Name               | Description                     |
+| ----------------------- | ------------------------------- |
+| `wifi_scan_results.csv` | All scanned WiFi networks       |
+| `rogue_aps.csv`         | Detected rogue APs              |
+| `mac_spoofing.csv`      | MAC spoofing incidents          |
+| `deauth_attacks.csv`    | Logged deauthentication attacks |
 
----
+
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for new features or bug fixes.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
 ---
 
-## ⚖️ License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
-
-* **Your Name**
-* GitHub: [@yourusername](https://github.com/yourusername)
-
----
-
-## ⚠️ Disclaimer
-
-This tool is intended for **educational and security auditing purposes only**. Unauthorized scanning or packet capturing may be illegal in your jurisdiction. Use responsibly and only on networks you own or have permission to analyze.
-
-```
-
----
-
-Would you like me to include a badge section (for GitHub actions, Python version, etc.) or generate a LICENSE file too?
-```
