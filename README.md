@@ -1,6 +1,4 @@
-Based on your Python script for a **WiFi Network Analyzer**, here is a complete and professional `README.md` you can use on GitHub:
 
----
 
 # 📶 WiFi Network Analyzer
 
